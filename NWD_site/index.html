@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorytm największego wspólnego dzielnika</title>
+</head>
+<body>
+    <h1>Algorytm największego wspólnego dzielnika</h1>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <form id="gcdForm">
+        <label for="num1">Pierwsza liczba:</label>
+        <input type="number" id="num1" name="num1" required><br><br>
+        
+        <label for="num2">Druga liczba:</label>
+        <input type="number" id="num2" name="num2" required><br><br>
+        
+        <button type="submit">Oblicz NWD</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <script>
+        document.getElementById("gcdForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var num1 = parseInt(document.getElementById("num1").value);
+            var num2 = parseInt(document.getElementById("num2").value);
+            var result = calculateGCD(num1, num2);
+            document.getElementById("result").innerHTML = "<p>Największy wspólny dzielnik (" + num1 + ", " + num2 + ") = " + result + "</p>";
+        });
+        
+        function calculateGCD(a, b) {
+            if (b === 0) {
+                return a;
+            }
+            return calculateGCD(b, a % b);
+        }
+    </script>
+</body>
+</html>

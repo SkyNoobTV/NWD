@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-size: 60px;
+  background-image: url('../images/bg.png');
+  
+  color: white;
+}
+
+header,
+main,
+footer {
+  width: 960px;
+  margin: 0 auto;  
+}
